@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Showcase</title>
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
+  <!-- Your external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-title">
+        <span>&lt;LOGO&gt;</span>
+        <span>&lt;TITLE&gt;</span>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Movie</a></li>
+          <li><a href="#">Cinemas</a></li>
+          <li><a href="#">Movie</a></li>
+        </ul>
+      </nav>
+      <div class="settings"><i class="fas fa-cog"></i></div>
+    </header>
+
+      <!-- Light/Dark toggle -->
+      <div class="theme-toggle">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="active">NOW SHOWING</button>
+      <button>COMING SOON</button>
+      <hr>
+    </div>
+
+    <!-- Movie Grid -->
+    <div class="movies-grid">
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+      <div class="movie-card">
+        <div class="poster"></div>
+        <h3>&lt;TITLE&gt;</h3>
+        <button class="ticket-btn">Buy Tickets</button>
+      </div>
+    </div>
+
+    <button class="view-all">View All Movies</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="footer-logos">
+        <img src="logo1.png" alt="Logo 1">
+        <img src="logo2.png" alt="Logo 2">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy;2025; Design by &lt;GroupName&gt;
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-icon');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      // swap icon
+      if (document.body.classList.contains('light-mode')) {
+        toggle.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        toggle.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
+
+</body>
+</html>

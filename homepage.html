@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Movie Page</title>
+	<style>
+	:root {
+		--bg-color: #222222;
+		--text-color: white;
+		--accent-color: #FF0000;
+		--inactive-tab: #878787;
+		--card-bg: white;
+	}
+
+	body.light {
+		--bg-color: white;
+		--text-color: #111;
+		--inactive-tab: #aaa;
+		--card-bg: #fff;
+	}
+
+	body {
+		margin: 0;
+		font-family: Arial, sans-serif;
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 41px;
+		background-color: #1A1A1A;
+	}
+
+	.left-header {
+		font-size: 20px;
+	}
+
+	nav {
+		margin-left: auto;
+	}
+
+	nav a {
+		margin: 0 30px;
+		color: var(--text-color);
+		text-decoration: none;
+	}
+
+	.search-bar {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+	}
+
+	input[type="text"] {
+		padding: 10px;
+		border-radius: 4px;
+		border: none;
+	}
+
+	.toggle-switch {
+		cursor: pointer;
+		font-size: 20px;
+	}
+
+	.tabs {
+		display: flex;
+		margin: 40px;
+		gap: 50px;
+		font-family: Georgia, serif;
+		position: relative;
+	}
+
+	.tab {
+		cursor: pointer;
+		font-size: 20px;
+		color: var(--inactive-tab);
+		font-weight: normal;
+	}
+
+	.tab.active {
+		color: var(--accent-color);
+		font-weight: bold;
+		font-size: 23px;
+	}
+
+	.tabs::after {
+		content: "";
+		position: absolute;
+		bottom: -13px;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background-color: #878787;
+	}
+
+	.carousel-container {
+		position: relative;
+		padding: 15px 0px;
+		background-color: var(--accent-color);
+	}
+
+	.carousel-container:hover .carousel-button {
+		opacity: 1;
+		visibility: visible;
+}
+
+	.carousel-button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(to right, rgba(255, 0, 0, 0.7), transparent);
+		border: none;
+		color: white;
+		font-size: 28px;
+		cursor: pointer;
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+}
+
+	.scroll-wrapper {
+		overflow-x: auto;
+		white-space: nowrap;
+		scroll-behavior: smooth;
+		padding: 20px 30px;
+	}
+	.scroll-wrapper::-webkit-scrollbar {
+		display: none;
+	}
+
+	.movie-card {
+		display: inline-block;
+		background-color: var(--card-bg);
+		width: 250px;
+		height: 350px;
+		margin: 0 25px;
+		border-radius: 0px;
+		vertical-align: top;
+	}
+
+
+	.carousel-button.right {
+		right: 0;
+		left: auto;
+		background: linear-gradient(to left, rgba(255, 0, 0, 0.7), transparent);
+}
+
+	.browse-button {
+		display: flex;
+		justify-content: center;
+		margin: 30px;
+	}
+
+	.browse-button button {
+		background-color: var(--accent-color);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 6px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	footer {
+		text-align: center;
+		font-size: 12px;
+		background-color: #000;
+		color: gray;
+		padding: 10px;
+		margin-top: auto;
+	}
+	</style>
+</head>
+<body>
+<header>
+	<div class="left-header">
+		&lt;LOGO&gt;&lt;TITLE&gt;
+	</div>
+	<nav>
+		<a href="#">Get Tickets</a>
+		<a href="#">Movies</a>
+		<a href="#">Cinemas</a>
+		<a href="#">Profile</a>
+	</nav>
+	<div class="search-bar">
+		<input type="text" placeholder="Search movies or cinemas">
+		<div class="toggle-switch" onclick="toggleTheme()">🌓</div>
+	</div>
+</header>
+
+<div class="tabs">
+	<span class="tab active" onclick="switchTab(this)">NOW SHOWING</span>
+	<span class="tab" onclick="switchTab(this)">COMING SOON</span>
+</div>
+
+<div class="carousel-container">
+	<button class="carousel-button left" onclick="scrollCarousel(-1)">&#10094;</button>
+	<div class="scroll-wrapper" id="carousel">
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+		<div class="movie-card"></div>
+	</div>
+	<button class="carousel-button right" onclick="scrollCarousel(1)">&#10095;</button>
+</div>
+
+<div class="browse-button">
+	<button>Browse All Movies</button>
+</div>
+
+<footer>
+	© 2025 Amaguin | A Website for Database Systems
+</footer>
+
+<script>
+	function toggleTheme() {
+		document.body.classList.toggle("light");
+	}
+
+	function switchTab(selected) {
+		document.querySelectorAll('.tab').forEach(tab => {
+			tab.classList.remove('active');
+		});
+		selected.classList.add('active');
+	}
+
+	function scrollCarousel(direction) {
+		const carousel = document.getElementById("carousel");
+		const scrollAmount = 1300 * direction; // You can tweak this
+		carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+	}
+</script>
+</body>
+</html>

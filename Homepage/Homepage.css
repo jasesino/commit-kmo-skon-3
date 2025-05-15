@@ -1,0 +1,286 @@
+/* MOVED FROM HOMEPAGE.HTML */
+:root {
+	--bg-color: #222222;
+	--text-color: white;
+	--accent-color: #FF0000;
+	--inactive-tab: #878787;
+	--card-bg: white;
+}
+
+body.light {
+	--bg-color: white;
+	--text-color: #111;
+	--inactive-tab: #aaa;
+	--card-bg: #fff;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 41px;
+	background-color: #1A1A1A;
+}
+
+.left-header {
+	font-size: 20px;
+}
+
+nav {
+	margin-left: auto;
+}
+
+nav a {
+	margin: 0 30px;
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+search-bar {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+
+input[type="text"] {
+	padding: 10px;
+	border-radius: 4px;
+	border: none;
+}
+
+.toggle-switch {
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.tabs {
+	display: flex;
+	margin: 40px;
+	gap: 50px;
+	font-family: Georgia, serif;
+	position: relative;
+}
+
+.tab {
+	cursor: pointer;
+	font-size: 20px;
+	color: var(--inactive-tab);
+	font-weight: normal;
+}
+
+.tab.active {
+	color: var(--accent-color);
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.tabs::after {
+	content: "";
+	position: absolute;
+	bottom: -13px;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background-color: #878787;
+}
+
+.carousel-container {
+	position: relative;
+	padding: 15px 0px;
+	background-color: var(--accent-color);
+}
+
+.carousel-container:hover .carousel-button {
+	opacity: 1;
+	visibility: visible;
+}
+
+.carousel-button {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to right, rgba(255, 0, 0, 0.7), transparent);
+	border: none;
+	color: white;
+	font-size: 28px;
+	cursor: pointer;
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+}
+
+.scroll-wrapper {
+	overflow-x: auto;
+	white-space: nowrap;
+	scroll-behavior: smooth;
+	padding: 20px 30px;
+}
+.scroll-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.movie-card {
+	display: inline-block;
+	background-color: var(--card-bg);
+	width: 250px;
+	height: 350px;
+	margin: 0 25px;
+	border-radius: 0px;
+	vertical-align: top;
+}
+
+.carousel-button.right {
+	right: 0;
+	left: auto;
+	background: linear-gradient(to left, rgba(255, 0, 0, 0.7), transparent);
+}
+
+.browse-button {
+	display: flex;
+	justify-content: center;
+	margin: 30px;
+}
+
+.browse-button button {
+	background-color: var(--accent-color);
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+footer {
+	text-align: center;
+	font-size: 12px;
+	background-color: #000;
+	color: gray;
+	padding: 10px;
+	margin-top: auto;
+}
+
+.custom-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 32px 32px 18px 32px;
+  background: #fff;
+  border-bottom: 1.5px solid #eee;
+  margin-bottom: 18px;
+  justify-content: space-between; /* push profile to the right */
+}
+.custom-progress-bar .progress-logo {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  margin-right: 18px;
+}
+.custom-progress-bar .progress-steps {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: Georgia, serif;
+  font-size: 1.18rem;
+}
+.custom-progress-bar .progress-step {
+  color: #888;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.custom-progress-bar .progress-step.active {
+  color: #e50914;
+  font-weight: bold;
+}
+.custom-progress-bar .progress-arrow {
+  color: #bbb;
+  font-size: 1.3rem;
+  margin: 0 6px;
+  transition: color 0.2s;
+}
+.custom-progress-bar .progress-arrow.active {
+  color: #e50914;
+}
+.custom-progress-bar.dark {
+  background: #181818;
+  border-bottom: 1.5px solid #222;
+}
+.custom-progress-bar.dark .progress-step {
+  color: #aaa;
+}
+.custom-progress-bar.dark .progress-step.active {
+  color: #e50914;
+}
+.custom-progress-bar.dark .progress-arrow {
+  color: #444;
+}
+.custom-progress-bar.dark .progress-arrow.active {
+  color: #e50914;
+}
+.custom-progress-bar.dark .progress-logo {
+  /* filter: brightness(0) invert(1); */
+}
+@media (max-width: 700px) {
+  .custom-progress-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px 8px 10px 8px;
+  }
+  .custom-progress-bar .progress-logo {
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+  .custom-progress-bar .progress-steps {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 1rem;
+  }
+}
+
+.header-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: transparent;
+  padding: 12px 32px 0 0;
+}
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-pfp {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e50914;
+}
+.header-profile-link {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.header-profile-link:hover {
+  color: #e50914;
+  text-decoration: underline;
+}

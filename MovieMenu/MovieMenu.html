@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Menu</title>
+  <link rel="stylesheet" href="../Homepage/Homepage.css">
+  <link rel="stylesheet" href="MovieMenu.css">
+</head>
+<body>
+  <!-- Progress Bar Header (copied from Homepage) -->
+  <div class="custom-progress-bar dark">
+    <img src="../Pictures/Placeholder1.png" alt="Logo" class="progress-logo">
+    <div class="progress-steps">
+      <span class="progress-step active">Main Menu</span>
+      <span class="progress-arrow active">&#8594;</span>
+      <span class="progress-step active">Movies</span>
+      <span class="progress-arrow">&#8594;</span>
+      <span class="progress-step">Cinema</span>
+      <span class="progress-arrow">&#8594;</span>
+      <span class="progress-step">Get Ticket</span>
+      <span class="progress-arrow">&#8594;</span>
+      <span class="progress-step">Seat Selection</span>
+      <span class="progress-arrow">&#8594;</span>
+      <span class="progress-step">Confirmation</span>
+    </div>
+    <div class="header-profile">
+      <img src="../Pictures/Placeholder2.png" alt="User Profile" class="header-pfp">
+      <a href="../ProfilePage/ProfilePage.html" class="header-profile-link">Profile</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="movie-menu-main">
+    <div class="movie-menu-filters">
+      <div class="filters-title">BROWSE MOVIES BY</div>
+      <div class="filters-row">
+        <div class="filter-group">
+          <label for="genre">Genre</label>
+          <select id="genre">
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Comedy</option>
+            <option>Drama</option>
+            <option>Horror</option>
+            <option>Thriller</option>
+            <option>Romance</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="cinema">Cinema</label>
+          <div class="custom-cinema-dropdown" id="cinemaDropdown">
+            <div class="custom-cinema-selected" id="cinemaSelected">
+              <span class="cinema-name">SM CITY Iloilo</span>
+              <span class="cinema-arrow">&#9660;</span>
+            </div>
+            <div class="custom-cinema-options" id="cinemaOptions">
+              <div class="cinema-option selected" data-cinema="SM CITY Iloilo" data-location="MANDURIAO" data-logo="../Pictures/Placeholder1.png">
+                <img src="../Pictures/Placeholder1.png" alt="SM CITY Iloilo" class="cinema-logo">
+                <div class="cinema-info">
+                  <span class="cinema-name">SM CITY Iloilo</span>
+                  <span class="cinema-location">MANDURIAO</span>
+                </div>
+              </div>
+              <div class="cinema-option" data-cinema="Robinsons Place Jaro" data-location="JARO" data-logo="../Pictures/Placeholder2.png">
+                <img src="../Pictures/Placeholder2.png" alt="Robinsons Place Jaro" class="cinema-logo">
+                <div class="cinema-info">
+                  <span class="cinema-name">Robinsons Place Jaro</span>
+                  <span class="cinema-location">JARO</span>
+                </div>
+              </div>
+              <div class="cinema-option" data-cinema="Festive Walk Iloilo" data-location="ILOILO" data-logo="../Pictures/Placeholder3.png">
+                <img src="../Pictures/Placeholder3.png" alt="Festive Walk Iloilo" class="cinema-logo">
+                <div class="cinema-info">
+                  <span class="cinema-name">Festive Walk Iloilo</span>
+                  <span class="cinema-location">ILOILO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label for="availability">Availability</label>
+          <div class="custom-availability-dropdown" id="availabilityDropdown">
+            <div class="custom-availability-selected" id="availabilitySelected">
+              <span class="availability-name">NOW SHOWING</span>
+              <span class="availability-arrow">&#9660;</span>
+            </div>
+            <div class="custom-availability-options" id="availabilityOptions">
+              <div class="availability-option selected" data-availability="NOW SHOWING">
+                <span class="availability-name">NOW SHOWING</span>
+              </div>
+              <div class="availability-option" data-availability="COMING SOON">
+                <span class="availability-name">COMING SOON</span>
+              </div>
+              <div class="availability-option" data-availability="ARCHIVED">
+                <span class="availability-name">ARCHIVED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label for="rating">Rating</label>
+          <div class="custom-rating-dropdown" id="ratingDropdown">
+            <div class="custom-rating-selected" id="ratingSelected">
+              <span class="rating-label">★★★★★</span>
+              <span class="rating-arrow">&#9660;</span>
+            </div>
+            <div class="custom-rating-options" id="ratingOptions">
+              <div class="rating-option" data-rating="5">★★★★★</div>
+              <div class="rating-option" data-rating="4">★★★★☆</div>
+              <div class="rating-option" data-rating="3">★★★☆☆</div>
+              <div class="rating-option" data-rating="2">★★☆☆☆</div>
+              <div class="rating-option" data-rating="1">★☆☆☆☆</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="filters-divider" />
+    </div>
+    <div class="movie-menu-grid">
+      <!-- 20 movie cards with poster images -->
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder1.png" alt="Movie Poster 1" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder2.png" alt="Movie Poster 2" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder3.png" alt="Movie Poster 3" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder4.png" alt="Movie Poster 4" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder5.png" alt="Movie Poster 5" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder6.png" alt="Movie Poster 6" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder7.png" alt="Movie Poster 7" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder8.png" alt="Movie Poster 8" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder9.png" alt="Movie Poster 9" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder1.png" alt="Movie Poster 10" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder2.png" alt="Movie Poster 11" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder3.png" alt="Movie Poster 12" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder4.png" alt="Movie Poster 13" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder5.png" alt="Movie Poster 14" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder6.png" alt="Movie Poster 15" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder7.png" alt="Movie Poster 16" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder8.png" alt="Movie Poster 17" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder9.png" alt="Movie Poster 18" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder1.png" alt="Movie Poster 19" class="movie-poster-img"></div>
+      <div class="movie-menu-card"><img src="../Pictures/Placeholder2.png" alt="Movie Poster 20" class="movie-poster-img"></div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Amaguin | A Website for Database Systems
+  </footer>
+  <script src="MovieMenu.js"></script>
+</body>
+</html>

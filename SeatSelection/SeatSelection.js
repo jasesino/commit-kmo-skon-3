@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Modal logic
   const modalOverlay = document.getElementById('seat-modal-overlay');
   const modalClose = document.getElementById('seat-modal-close');
+  const modalExit = document.getElementById('seat-modal-exit');
   const modalContent = document.getElementById('seat-modal-content');
 
   function showSeatModal(seatInfo) {
@@ -102,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     modalOverlay.classList.remove('active');
   }
   modalClose.addEventListener('click', closeSeatModal);
+  modalExit.addEventListener('click', closeSeatModal);
   modalOverlay.addEventListener('click', function(e) {
     if (e.target === modalOverlay) closeSeatModal();
   });

@@ -233,9 +233,7 @@ footer {
 .custom-progress-bar.dark .progress-arrow.active {
   color: #e50914;
 }
-.custom-progress-bar.dark .progress-logo {
-  /* filter: brightness(0) invert(1); */
-}
+
 @media (max-width: 700px) {
   .custom-progress-bar {
     flex-direction: column;

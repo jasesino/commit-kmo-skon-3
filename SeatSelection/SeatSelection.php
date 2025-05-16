@@ -1,3 +1,4 @@
+<?php // SeatSelection.php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
       <span class="progress-step">Confirmation</span>
     </div>
     <div class="header-profile">
-      <a href="../ProfilePage/ProfilePage.html" class="header-profile-link-rect" aria-label="Go to Profile Page">
+      <a href="../ProfilePage/ProfilePage.php" class="header-profile-link-rect" aria-label="Go to Profile Page">
         <img src="../Pictures/Placeholder2.png" alt="User Profile" class="header-pfp">
         <span class="header-profile-text">Profile</span>
       </a>

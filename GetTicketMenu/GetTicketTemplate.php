@@ -1,3 +1,4 @@
+<?php // GetTicketTemplate.php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
       <span class="progress-step">Confirmation</span>
     </div>
     <div class="header-profile">
-      <a href="../ProfilePage/ProfilePage.html" class="header-profile-link-rect" aria-label="Go to Profile Page">
+      <a href="../ProfilePage/ProfilePage.php" class="header-profile-link-rect" aria-label="Go to Profile Page">
         <img src="../Pictures/Placeholder2.png" alt="User Profile" class="header-pfp">
         <span class="header-profile-text">Profile</span>
       </a>
@@ -64,7 +65,7 @@
         <button class="get-ticket-showtime-btn">8:30 PM</button>
       </div>
     </div>
-    <a href="../SeatSelection/SeatSelection.html">
+    <a href="../SeatSelection/SeatSelection.php">
       <button class="get-ticket-select-seats">Select Seats</button>
     </a>
   </main>

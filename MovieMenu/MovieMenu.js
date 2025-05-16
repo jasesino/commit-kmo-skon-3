@@ -89,8 +89,8 @@ function getSelectedRating() {
   return selected ? selected.dataset.rating : 'ALL';
 }
 function filterMovies() {
-  const search = searchInput.value.trim().toLowerCase();
-  const genre = genreSelect.value.trim().toLowerCase();
+  const search = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  const genre = genreSelect ? genreSelect.value.trim().toLowerCase() : '';
   const cinema = getSelectedCinema().trim().toLowerCase();
   const availability = getSelectedAvailability().trim().toLowerCase();
   const rating = getSelectedRating().trim();
@@ -109,20 +109,20 @@ function filterMovies() {
     card.style.display = show ? '' : 'none';
   });
 }
-searchInput.addEventListener('input', filterMovies);
-genreSelect.addEventListener('change', filterMovies);
+if (searchInput) searchInput.addEventListener('input', filterMovies);
+if (genreSelect) genreSelect.addEventListener('change', filterMovies);
 // Cinema, Availability, Rating dropdowns already update .selected, so listen for click
-cinemaOptions.querySelectorAll('.cinema-option').forEach(option => {
+if (cinemaOptions) cinemaOptions.querySelectorAll('.cinema-option').forEach(option => {
   option.addEventListener('click', function() {
     setTimeout(filterMovies, 0);
   });
 });
-availabilityOptions.querySelectorAll('.availability-option').forEach(option => {
+if (availabilityOptions) availabilityOptions.querySelectorAll('.availability-option').forEach(option => {
   option.addEventListener('click', function() {
     setTimeout(filterMovies, 0);
   });
 });
-ratingOptions.querySelectorAll('.rating-option').forEach(option => {
+if (ratingOptions) ratingOptions.querySelectorAll('.rating-option').forEach(option => {
   option.addEventListener('click', function() {
     setTimeout(filterMovies, 0);
   });

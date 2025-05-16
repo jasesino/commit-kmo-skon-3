@@ -72,43 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
   confirmBtn.addEventListener('click', function() {
     const selected = Array.from(document.querySelectorAll('.seat.selected'));
     if (selected.length === 0) return;
-    // Collect seat info for summary and backend
-    const seatInfo = selected.map(seat => ({
-      row: seat.dataset.row,
-      number: seat.textContent
-    }));
-    // Show summary in modal
-    showSeatModal(seatInfo);
-  });
-
-  // Modal logic
-  const modalOverlay = document.getElementById('seat-modal-overlay');
-  const modalClose = document.getElementById('seat-modal-close');
-  const modalExit = document.getElementById('seat-modal-exit');
-  const modalContent = document.getElementById('seat-modal-content');
-
-  function showSeatModal(seatInfo) {
-    let html = '<h2 id="seat-modal-title">Selected Seats</h2>';
-    if (seatInfo.length === 0) {
-      html += '<div>No seats selected.</div>';
-    } else {
-      html += '<ul>' + seatInfo.map(s => `<li>Row <b>${s.row}</b> Seat <b>${s.number}</b></li>`).join('') + '</ul>';
-    }
-    modalContent.innerHTML = html;
-    modalOverlay.classList.add('active');
-    // Focus for accessibility
-    modalClose.focus();
-  }
-  function closeSeatModal() {
-    modalOverlay.classList.remove('active');
-  }
-  modalClose.addEventListener('click', closeSeatModal);
-  modalExit.addEventListener('click', closeSeatModal);
-  modalOverlay.addEventListener('click', function(e) {
-    if (e.target === modalOverlay) closeSeatModal();
-  });
-  window.addEventListener('keydown', function(e) {
-    if (modalOverlay.classList.contains('active') && (e.key === 'Escape' || e.key === 'Esc')) closeSeatModal();
+    // Redirect to thank you page after confirming seat selection
+    window.location.href = '../Confirmation/thankyou.html';
   });
 
   // Initial state

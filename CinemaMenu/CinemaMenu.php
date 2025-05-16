@@ -1,3 +1,4 @@
+<?php // CinemaMenu.php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
       <span class="progress-step">Confirmation</span>
     </div>
     <div class="header-profile">
-      <a href="../ProfilePage/ProfilePage.html" class="header-profile-link-rect" aria-label="Go to Profile Page">
+      <a href="../ProfilePage/ProfilePage.php" class="header-profile-link-rect" aria-label="Go to Profile Page">
         <img src="../Pictures/Placeholder2.png" alt="User Profile" class="header-pfp">
         <span class="header-profile-text">Profile</span>
       </a>
@@ -54,7 +55,7 @@
           <img src="../../Pictures/Placeholder1.png" alt="Facility 4" class="cinema-gallery-img single">
         </div>
         <div class="cinema-arrow-col">
-          <a href="../GetTicketMenu/GetTicketTemplate.html" class="cinema-arrow-btn-link">
+          <a href="../GetTicketMenu/GetTicketTemplate.php" class="cinema-arrow-btn-link">
             <button class="cinema-arrow-btn" aria-label="Go to SM City Iloilo">&#9654;</button>
           </a>
         </div>
@@ -80,7 +81,7 @@
           <img src="../../Pictures/Placeholder9.png" alt="Facility 4" class="cinema-gallery-img single">
         </div>
         <div class="cinema-arrow-col">
-          <a href="../GetTicketMenu/GetTicketTemplate.html" class="cinema-arrow-btn-link">
+          <a href="../GetTicketMenu/GetTicketTemplate.php" class="cinema-arrow-btn-link">
             <button class="cinema-arrow-btn" aria-label="Go to Robinsons Place Jaro">&#9654;</button>
           </a>
         </div>

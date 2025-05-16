@@ -69,3 +69,55 @@ if (ratingDropdown && ratingSelected && ratingOptions) {
     }
   });
 }
+
+// --- Movie Card Search & Filter Logic ---
+const movieCards = document.querySelectorAll('.movie-menu-card');
+const searchInput = document.getElementById('movieSearch');
+const genreSelect = document.getElementById('genre');
+// cinemaDropdown, availabilityDropdown, ratingDropdown already declared above
+
+function getSelectedCinema() {
+  const selected = cinemaDropdown.querySelector('.cinema-option.selected');
+  return selected ? selected.dataset.cinema : 'ALL';
+}
+function getSelectedAvailability() {
+  const selected = availabilityDropdown.querySelector('.availability-option.selected');
+  return selected ? selected.dataset.availability : 'ALL';
+}
+function getSelectedRating() {
+  const selected = ratingDropdown.querySelector('.rating-option.selected');
+  return selected ? selected.dataset.rating : 'ALL';
+}
+function filterMovies() {
+  const search = searchInput.value.trim().toLowerCase();
+  const genre = genreSelect.value;
+  const cinema = getSelectedCinema();
+  const availability = getSelectedAvailability();
+  const rating = getSelectedRating();
+  movieCards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const cardGenre = card.dataset.genre;
+    const cardCinema = card.dataset.cinema;
+    const cardAvailability = card.dataset.availability;
+    const cardRating = card.dataset.rating;
+    let show = true;
+    if (search && !name.includes(search)) show = false;
+    if (genre && genre !== '' && genre !== cardGenre) show = false;
+    if (cinema && cinema !== 'ALL' && cinema !== cardCinema) show = false;
+    if (availability && availability !== 'ALL' && availability !== cardAvailability) show = false;
+    if (rating && rating !== 'ALL' && rating !== cardRating) show = false;
+    card.style.display = show ? '' : 'none';
+  });
+}
+searchInput.addEventListener('input', filterMovies);
+genreSelect.addEventListener('change', filterMovies);
+// Cinema, Availability, Rating dropdowns already update .selected, so listen for click
+cinemaDropdown.addEventListener('click', function(e) {
+  if (e.target.classList.contains('cinema-option')) setTimeout(filterMovies, 10);
+});
+availabilityDropdown.addEventListener('click', function(e) {
+  if (e.target.classList.contains('availability-option')) setTimeout(filterMovies, 10);
+});
+ratingDropdown.addEventListener('click', function(e) {
+  if (e.target.classList.contains('rating-option')) setTimeout(filterMovies, 10);
+});

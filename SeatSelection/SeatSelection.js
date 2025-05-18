@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const selected = Array.from(document.querySelectorAll('.seat.selected'));
     if (selected.length === 0) return;
     // Redirect to thank you page after confirming seat selection
-    window.location.href = '../Confirmation/thankyou.html';
+    window.location.href = '../Confirmation/thankyou.php';
   });
 
   // Initial state

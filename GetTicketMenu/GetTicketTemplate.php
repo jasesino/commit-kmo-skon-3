@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Get Ticket</title>
-  <link rel="stylesheet" href="../../../Homepage/Homepage.css">
+  <link rel="stylesheet" href="../Homepage/Homepage.css">
   <link rel="stylesheet" href="GetTicketTemplate.css">
 </head>
 <body>
   <!-- Progress Bar Header (Get Ticket step active) -->
   <div class="custom-progress-bar dark">
-    <img src="../../../Pictures/Placeholder1.png" alt="Logo" class="progress-logo">
+    <img src="../Pictures/Placeholder1.png" alt="Logo" class="progress-logo">
     <div class="progress-steps">
       <span class="progress-step active">Main Menu</span>
       <span class="progress-arrow active">&#8594;</span>
@@ -37,7 +37,7 @@
     <div class="get-ticket-card">
       <div class="get-ticket-movie-row">
         <div class="get-ticket-poster-placeholder">
-          <img src="../../../Pictures/Placeholder3.png" alt="Movie Poster" class="get-ticket-poster-img" />
+          <img src="../Pictures/Placeholder3.png" alt="Movie Poster" class="get-ticket-poster-img" />
         </div>
         <div class="get-ticket-movie-info">
           <div class="get-ticket-title-row">

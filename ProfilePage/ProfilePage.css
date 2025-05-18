@@ -1,4 +1,12 @@
 /* Profile Page Custom Styles */
+body {
+  background: #181818; /* Make the background dark for the whole page */
+  color: #eee;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
 .profile-container {
   max-width: 1100px;
   margin: 40px auto 0 auto;
@@ -6,6 +14,7 @@
   border-radius: 10px;
   padding: 40px 40px 30px 40px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  width: 100%;
 }
 .profile-header {
   display: flex;
@@ -14,16 +23,23 @@
   margin-bottom: 30px;
 }
 .profile-avatar {
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
   background: #111;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5.5rem;
-  color: #fff;
-  border: 4px solid #fff;
+  border: 3px solid #fff;
+  overflow: hidden;
+  padding: 0;
+}
+.profile-picture-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 .profile-info {
   flex: 1;
@@ -82,6 +98,8 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box;
 }
 .movie-title-row {
   display: flex;
@@ -256,6 +274,7 @@
   flex-direction: column;
   align-items: center;
   background: transparent;
+  padding: 2rem 0;
 }
 
 /* Ensure section separation visually */
@@ -264,6 +283,260 @@
 }
 .title-tabs-section + .movie-rating-section {
   margin-top: 18px;
+}
+
+.transaction-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+  width: 100%;
+  align-items: flex-start;
+}
+.transaction-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 16px 24px;
+  min-width: 320px;
+  max-width: 480px;
+  width: 100%;
+  transition: box-shadow 0.18s, transform 0.18s;
+  cursor: pointer;
+}
+.transaction-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.transaction-movie-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+.transaction-movie-poster {
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #eee;
+}
+.transaction-movie-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.transaction-movie-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #222;
+}
+.transaction-movie-meta {
+  font-size: 0.98rem;
+  color: #888;
+}
+.transaction-details-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+.transaction-details-btn:hover {
+  background: #b0060f;
+}
+.transaction-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.92);
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+.transaction-modal.active {
+  display: flex;
+}
+.transaction-modal-content {
+  background: #222;
+  border-radius: 12px;
+  padding: 36px 32px 32px 32px;
+  min-width: 320px;
+  max-width: 96vw;
+  min-height: 180px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #fff;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+  position: relative;
+}
+.transaction-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.18s, color 0.18s;
+}
+.transaction-modal-close:hover {
+  background: #e50914;
+  color: #fff;
+}
+.transaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.transaction-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+  font-size: 1.08rem;
+  color: #fff;
+}
+.transaction-loading {
+  color: #e50914;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* Transaction History Section */
+.transaction-history-section {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #181a1b;
+  min-height: 300px;
+}
+
+#transaction-history-list {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.transaction-card {
+  background: #232526;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s;
+  color: #f1f1f1;
+}
+.transaction-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.transaction-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+.transaction-movie-title {
+  color: #e0e0e0;
+}
+.transaction-date {
+  color: #b0b0b0;
+}
+.transaction-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: #d0d0d0;
+}
+.view-transaction-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.view-transaction-btn:hover {
+  background: #0056b3;
+}
+
+/* Transaction Modal */
+.transaction-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.65);
+  justify-content: center;
+  align-items: center;
+}
+.transaction-modal-content {
+  background: #232526;
+  margin: 5% auto;
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+  position: relative;
+  animation: fadeIn 0.2s;
+  color: #f1f1f1;
+}
+.transaction-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 2rem;
+  color: #b0b0b0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.transaction-modal-close:hover {
+  color: #fff;
+}
+#modal-transaction-list > div {
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+  color: #e0e0e0;
+}
+@media (max-width: 600px) {
+  .transaction-modal-content {
+    padding: 1.2rem 0.7rem;
+    max-width: 95vw;
+  }
+  #transaction-history-list {
+    max-width: 98vw;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -304,6 +577,21 @@
     min-width: 110px;
     max-width: 110px;
   }
+  .transaction-history-list, .transaction-modal-content {
+    padding: 16px 4px 16px 4px;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .transaction-card {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 8px 8px 8px 8px;
+  }
+  .transaction-movie-poster {
+    width: 48px;
+    height: 70px;
+    margin-right: 8px;
+  }
 }
 
 /* Footer Consistency */
@@ -312,6 +600,10 @@ footer {
   color: #888;
   margin-top: 40px;
   padding: 0;
+  width: 100vw;
+  left: 0;
+  position: relative;
+  box-sizing: border-box;
 }
 .footer-top {
   display: flex;
@@ -320,14 +612,17 @@ footer {
   align-items: center;
   gap: 20px;
   padding: 30px 0 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .social-icons a {
   font-size: 1.2rem;
   margin-right: 15px;
   transition: color 0.3s;
+  color: #fff !important; /* Make social icons white by default */
 }
 .social-icons a:hover {
-  color: #e50914;
+  color: #e50914 !important;
 }
 .footer-nav ul {
   display: flex;
@@ -344,36 +639,125 @@ footer {
   border-top: 1px solid #222;
   font-size: 0.85rem;
   margin-top: 20px;
+  width: 100%;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 24px;
-  right: 32px;
-  z-index: 1000;
-  background: #222;
-  color: #fff;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
+.theme-toggle, body.light-mode .theme-toggle, body.light-mode, body.light-mode .theme-toggle:hover {
+  display: none !important;
+}
+
+/* Watchlist Section */
+.movie-row {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
-  font-size: 1.6rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 1rem;
+}
+
+.movie-section {
+  flex: 0 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.movie-card {
+  width: 170px;
+  height: 240px;
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-title {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Section visibility */
+.transaction-history-section,
+.movie-rating-section {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 900px;
+  margin: 0 auto;
+  display: none; /* Hide by default */
+}
+
+.transaction-history-section[style*="display: block"],
+.movie-rating-section[style*="display: block"] {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section visibility and layout */
+.transaction-history-section,
+.movie-rating-section {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.transaction-history-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-rating-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Watchlist specific styles */
+.movie-rating-section .movie-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.movie-rating-section .movie-card {
+  width: 170px;
+  height: 240px;
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
 }
-.theme-toggle:hover {
-  background: #e50914;
+
+.movie-rating-section .movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-rating-section .movie-title {
   color: #fff;
-}
-body.light-mode .theme-toggle {
-  background: #fff;
-  color: #222;
-  border: 1px solid #ccc;
-}
-body.light-mode .theme-toggle:hover {
-  background: #e50914;
-  color: #fff;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }

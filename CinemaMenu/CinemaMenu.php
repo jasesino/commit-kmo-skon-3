@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cinema Menu</title>
-  <link rel="stylesheet" href="../../Homepage/Homepage.css">
+  <link rel="stylesheet" href="../Homepage/Homepage.css">
   <link rel="stylesheet" href="CinemaMenu.css">
 </head>
 <body>
   <!-- Progress Bar Header (reused from Movie Menu, Cinema step active) -->
   <div class="custom-progress-bar dark">
-    <img src="../../Pictures/Placeholder1.png" alt="Logo" class="progress-logo">
+    <img src="../Pictures/Placeholder1.png" alt="Logo" class="progress-logo">
     <div class="progress-steps">
       <span class="progress-step active">Main Menu</span>
       <span class="progress-arrow active">&#8594;</span>
@@ -38,7 +38,7 @@
       <!-- Cinema 1 -->
       <div class="cinema-row">
         <div class="cinema-logo-col">
-          <img src="../../Pictures/Placeholder1.png" alt="SM City Iloilo Logo" class="cinema-logo-img">
+          <img src="../Pictures/Placeholder1.png" alt="SM City Iloilo Logo" class="cinema-logo-img">
         </div>
         <div class="cinema-info-col">
           <div class="cinema-title">SM CITY ILOILO</div>
@@ -49,10 +49,10 @@
           </div>
         </div>
         <div class="cinema-gallery-col">
-          <img src="../../Pictures/Placeholder3.png" alt="Facility 1" class="cinema-gallery-img single">
-          <img src="../../Pictures/Placeholder4.png" alt="Facility 2" class="cinema-gallery-img single">
-          <img src="../../Pictures/Placeholder5.png" alt="Facility 3" class="cinema-gallery-img single">
-          <img src="../../Pictures/Placeholder1.png" alt="Facility 4" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder3.png" alt="Facility 1" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder4.png" alt="Facility 2" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder5.png" alt="Facility 3" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder1.png" alt="Facility 4" class="cinema-gallery-img single">
         </div>
         <div class="cinema-arrow-col">
           <a href="../GetTicketMenu/GetTicketTemplate.php" class="cinema-arrow-btn-link">
@@ -64,7 +64,7 @@
       <!-- Cinema 2 -->
       <div class="cinema-row">
         <div class="cinema-logo-col">
-          <img src="../../Pictures/Placeholder2.png" alt="Robinsons Place Jaro Logo" class="cinema-logo-img">
+          <img src="../Pictures/Placeholder2.png" alt="Robinsons Place Jaro Logo" class="cinema-logo-img">
         </div>
         <div class="cinema-info-col">
           <div class="cinema-title">ROBINSONS PLACE JARO</div>
@@ -75,10 +75,10 @@
           </div>
         </div>
         <div class="cinema-gallery-col">
-          <img src="../../Pictures/Placeholder6.png" alt="Facility 1" class="cinema-gallery-img single">
-          <img src="../../Pictures/Placeholder7.png" alt="Facility 2" class="cinema-gallery-img single">
-          <img src="../../Pictures/Placeholder8.png" alt="Facility 3" class="cinema-gallery-img single">
-          <img src="../../Pictures/Placeholder9.png" alt="Facility 4" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder6.png" alt="Facility 1" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder7.png" alt="Facility 2" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder8.png" alt="Facility 3" class="cinema-gallery-img single">
+          <img src="../Pictures/Placeholder9.png" alt="Facility 4" class="cinema-gallery-img single">
         </div>
         <div class="cinema-arrow-col">
           <a href="../GetTicketMenu/GetTicketTemplate.php" class="cinema-arrow-btn-link">

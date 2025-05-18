@@ -19,7 +19,9 @@
       <span class="progress-arrow active">&#8594;</span>
       <span class="progress-step active">Cinema</span>
       <span class="progress-arrow active">&#8594;</span>
-      <span class="progress-step active">Get Ticket</span>
+      <a href="../GetTicketMenu/GetTicketTemplate.php" class="progress-step-link">
+        <span class="progress-step active">get Ticket</span>
+      </a>
       <span class="progress-arrow active">&#8594;</span>
       <span class="progress-step active">Seat Selection</span>
       <span class="progress-arrow">&#8594;</span>

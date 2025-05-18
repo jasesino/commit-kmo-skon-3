@@ -1,4 +1,4 @@
 <?php
-header("Location: ProfilePage/ProfilePage.php");
+header("Location: Homepage/Homepage.php");
 exit();
 ?>

@@ -13,7 +13,9 @@
   <div class="custom-progress-bar dark">
     <img src="../Pictures/Placeholder1.png" alt="Logo" class="progress-logo">
     <div class="progress-steps">
-      <span class="progress-step active">Main Menu</span>
+      <a href="../Homepage/Homepage.php" class="progress-step-link">
+        <span class="progress-step active">Main Menu</span>
+      </a>
       <span class="progress-arrow active">&#8594;</span>
       <span class="progress-step active">Movies</span>
       <span class="progress-arrow">&#8594;</span>

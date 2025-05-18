@@ -22,7 +22,9 @@
       <span class="progress-arrow active">&#8594;</span>
       <span class="progress-step active">Get Ticket</span>
       <span class="progress-arrow active">&#8594;</span>
-      <span class="progress-step active">Seat Selection</span>
+      <a href="../SeatSelection/SeatSelection.php" class="progress-step-link">
+        <span class="progress-step active">Seat Selection</span>
+      </a>
       <span class="progress-arrow active">&#8594;</span>
       <span class="progress-step active">Confirmation</span>
     </div>
